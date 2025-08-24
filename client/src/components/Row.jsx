@@ -1,15 +1,17 @@
-function Row({ company, position, status }){
-    return(
-        <>
-        <tbody>
-            <tr>
-                <td>{company}</td>
-                <td>{position}</td>
-                <td>{status}</td>
-               <td></td>
-            </tr>
-        </tbody>
-        </>
-    )
-};
+import StatusBadge from "../components/StatusBadge";
+
+function Row({ company, position, status, onEdit, onDelete }) {
+  return (
+    <tr>
+      <td>{company}</td>
+      <td>{position}</td>
+      <td><StatusBadge status={status} /></td>
+      <td>
+        <button onClick={onEdit}>Edit</button>
+        <button onClick={onDelete}>Delete</button>
+      </td>
+    </tr>
+  );
+}
+
 export default Row;

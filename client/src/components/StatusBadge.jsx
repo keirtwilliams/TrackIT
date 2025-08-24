@@ -2,7 +2,7 @@ import { useState } from "react";
 
 function StatusBadge() {
     
-  const [newStatus, setNewStatus] = useState("");
+  const [newStatus, setNewStatus] = useState(status);
 
   let bgClass = "";
 
@@ -18,6 +18,7 @@ function StatusBadge() {
 
   return (
     <div className="flex items-center gap-4">
+
       {/* Badge */}
       <span className={`px-3 py-1 rounded-lg font-medium ${bgClass}`}>
         {newStatus}
